@@ -2,25 +2,19 @@ package com.example.nasaapod.ui.apod
 
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import androidx.viewpager2.widget.ViewPager2
-import coil.load
 import com.example.nasaapod.R
 import com.example.nasaapod.databinding.NasaApodFragmentBinding
 import com.example.nasaapod.domain.NasaApodRepositoryImp
 import com.example.nasaapod.ui.MainActivity
-import com.example.nasaapod.ui.mars.MarsFragment
-import com.example.nasaapod.ui.mars.MarsPageFragment
 import com.example.nasaapod.ui.transforms.ZoomOutPageTransformer
 import com.google.android.material.tabs.TabLayoutMediator
 import java.time.LocalDate

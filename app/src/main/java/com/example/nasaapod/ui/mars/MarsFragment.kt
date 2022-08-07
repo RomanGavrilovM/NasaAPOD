@@ -53,7 +53,7 @@ class MarsFragment : Fragment(R.layout.mars_fragment) {
 
         viewLifecycleOwner.lifecycle.coroutineScope.launchWhenStarted {
             marsViewModel.photos.collect { response ->
-                response?.let {
+                response.let {
                     size = it.latestPhotos.size
                     Log.d("HAPPY", "size= " + size)
                     binding.marsViewPager.adapter = MarsPagerAdapter(fragment, size)
