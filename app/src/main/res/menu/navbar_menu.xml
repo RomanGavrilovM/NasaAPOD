@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/apod_menu"
+        android:title="@string/apod_menu"
+        android:icon="@drawable/ic_apod"
+        />
+    <item
+        android:id="@+id/earth_menu"
+        android:icon="@drawable/ic_epic"
+        android:title="@string/earth_menu"/>
+    <item
+        android:id="@+id/mars_menu"
+        android:icon="@drawable/ic_mars"
+        android:title="@string/mars_menu"/>
+    <item
+        android:id="@+id/settings_menu"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="@string/settings_menu"/>
+
+
+
+   <!-- <group android:checkableBehavior="single">
+        <item
+            android:title="Choose theme"
+            android:checkable="false"/>
+        <item
+            android:id="@+id/theme_space"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Space"/>
+    <item
+        android:id="@+id/theme_alternative"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Alternative"/>
+    </group>-->
+
+</menu>

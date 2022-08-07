@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@id/settings_button" />
+        <Constraint android:id="@id/theme_space_button" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/settings_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:alpha="0"/>
+        <Constraint
+            android:id="@id/theme_space_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            app:layout_constraintCircle="@id/settings_button"
+            app:layout_constraintCircleAngle="270"
+            app:layout_constraintCircleRadius="@dimen/end_radius"
+           />
+
+        <Constraint
+            android:id="@id/theme_alter_space_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            app:layout_constraintCircle="@id/settings_button"
+            app:layout_constraintCircleAngle="90"
+            app:layout_constraintCircleRadius="@dimen/end_radius" />
+
+        <Constraint
+            android:id="@id/settings_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_theme_message"
+            android:alpha="1"
+            app:layout_constraintCircle="@id/settings_button"
+            app:layout_constraintCircleAngle="0"
+            app:layout_constraintCircleRadius="@dimen/end_radius"
+            />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="3000">
+        <OnClick
+            app:clickAction="transitionToEnd"
+            app:targetId="@id/settings_button"
+            />
+
+    </Transition>
+</MotionScene>

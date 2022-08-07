@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="space_chip_style" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_background_list</item>
+        <item name="android:textColor">@color/chip_text_color_list</item>
+    </style>
+
+    <style name="space_chip_style_alternative" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_background_list_alt</item>
+        <item name="android:textColor">@color/chip_text_color_list_alt</item>
+
+    </style>
+
+    <style name="bottomAppBarSpace" parent="Widget.MaterialComponents.BottomAppBar.Colored">
+        <item name="colorSurface">@color/space</item>
+        <item name="actionMenuTextColor">@color/white</item>
+    </style>
+
+    <style name="bottomAppBarSpaceAlt" parent="Widget.MaterialComponents.BottomAppBar.Colored">
+        <item name="colorSurface">@color/space_alt</item>
+    </style>
+
+
+</resources>

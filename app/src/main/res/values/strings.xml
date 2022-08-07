@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">NasaAPOD</string>
+    <string name="today_chip">today</string>
+    <string name="day1_chip">1 day ago</string>
+    <string name="day2_chip">2 day ago</string>
+    <string name="wiki_url">https://ru.wikipedia.com/wiki/</string>
+    <string name="coordinates_title">Centroid coordinates</string>
+    <string name="apod_menu">Apod</string>
+    <string name="earth_menu">Earth</string>
+    <string name="mars_menu">Mars</string>
+    <string name="settings_menu">Settings</string>
+    <string name="button_alt_theme_text">Alt</string>
+    <string name="button_main_theme_text">Space</string>
+    <string name="start_animation_button_text">START!</string>
+    <string name="choose_theme_message">Choose app theme</string>
+</resources>
