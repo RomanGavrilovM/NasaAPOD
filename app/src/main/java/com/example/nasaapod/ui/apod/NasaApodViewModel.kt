@@ -1,7 +1,6 @@
 package com.example.nasaapod.ui.apod
 
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -15,9 +14,11 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import java.io.IOException
 import java.time.LocalDate
-import java.util.*
+
 
 class NasaApodViewModel(val repository: NasaApodRepository) : ViewModel() {
+
+    val validator = ApodResponseValidator
 
     val _loading = MutableStateFlow(false)
     val loading: Flow<Boolean> = _loading
@@ -50,13 +51,29 @@ class NasaApodViewModel(val repository: NasaApodRepository) : ViewModel() {
                 val twoDaysAgo = LocalDate.now().minusDays(2).toString()
 
                 val todayResponse = repository.Apod(today)
-                _today.emit(todayResponse)
+                if (validator.isValidResponse(todayResponse)) {
+                    _today.emit(todayResponse)
+                }
+
+                /*
+                логика такая, проверям что ответ на запрос ща сегодняшнюю дату
+                отличается от ответа за вчерашнюю дату, ничего лучшене придумал
+                и да оч не красивый if if if
+                */
 
                 val oneDayAgoResponse = repository.Apod(oneDayAgo)
-                _oneDayAgo.emit(oneDayAgoResponse)
+                if (validator.isValidResponse(oneDayAgoResponse) && validator.isResponseAreNotEquals(
+                        todayResponse,
+                        oneDayAgoResponse
+                    )
+                )  {
+                    _oneDayAgo.emit(oneDayAgoResponse)
+                }
 
                 val twoDaysAgoyResponse = repository.Apod(twoDaysAgo)
-                _twoDaysAgo.emit(twoDaysAgoyResponse)
+                if (validator.isValidResponse(twoDaysAgoyResponse)) {
+                    _twoDaysAgo.emit(twoDaysAgoyResponse)
+                }
 
 
             } catch (exc: IOException) {
