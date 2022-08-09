@@ -34,21 +34,7 @@
         <!-- Customize your theme here. -->
         <item name="fontFamily">@font/breamcatcher</item>
         <item name="android:fontFamily">@font/breamcatcher</item>
-    </style>
 
-    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <!-- Set the splash screen background, animated icon, and animation duration. -->
-        <item name="windowSplashScreenBackground">@color/space</item>
-
-        <!-- Use windowSplashScreenAnimatedIcon to add either a drawable or an
-             animated drawable. One of these is required. -->
-        <item name="windowSplashScreenAnimatedIcon">@drawable/spash_icon</item>
-        <!-- Required for animated icons -->
-        <item name="windowSplashScreenAnimationDuration">2000</item>
-
-        <!-- Set the theme of the Activity that directly follows your splash screen. -->
-        <!-- Required -->
-        <item name="postSplashScreenTheme">@style/Theme.NasaAPOD</item>
     </style>
 
 
